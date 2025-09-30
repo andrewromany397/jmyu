@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drawing Worm</title>
+    <!-- <link rel="stylesheet" href="warm.css"> -->
+    <style>
+body {
+    background-image: linear-gradient(to right, red, orange, yellow, green, blue, purple, pink);
+}
+div {
+    position: absolute;
+}
+.ball {
+    height: 200px;
+    width: 200px;
+    top: 150px;
+    left: 60px;
+    background-color: red;
+    border-color: black;
+    border-style: solid;
+    border-radius: 50%;
+    box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.776);
+    animation: moving-ball 3s linear infinite alternate;
+}
+.ball2 {
+    height: 200px;
+    width: 200px;
+    top: 150px;
+    left: 160px;
+    background-color: red;
+    border-color: black;
+    border-style: solid;
+    border-radius: 50%;
+    box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.776);
+    animation: moving-ball2 3s linear infinite alternate;
+}
+.ball3 {
+    height: 200px;
+    width: 200px;
+    top: 150px;
+    left: 260px;
+    background-color: red;
+    border-color: black;
+    border-style: solid;
+    border-radius: 50%;
+    box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.776);
+    animation: moving-ball3 3s linear infinite alternate;
+}
+.ball4 {
+    height: 200px;
+    width: 200px;
+    top: 150px;
+    left: 360px;
+    background-color: red;
+    border-color: black;
+    border-style: solid;
+    border-radius: 50%;
+    box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.776);
+    animation: moving-ball4 3s linear infinite alternate;
+}
+.eye1 {
+    height: 50px;
+    width: 50px;
+    top: 200px;
+    left: 390px;
+    background-color: white;
+    border-color: black;
+    border-style: solid;
+    border-radius: 50%;
+    animation: moving-eye1 3s linear infinite alternate;
+}
+.eye2 {
+    height: 50px;
+    width: 50px;
+    top: 200px;
+    left: 480px;
+    background-color: white;
+    border-color: black;
+    border-style: solid;
+    border-radius: 50%;
+    animation: moving-eye2 3s linear infinite alternate;
+}
+.leg1 {
+    height: 1px;
+    width: 50px;
+    top: 330px;
+    left: 60px;
+    background-color: black;
+    transform: rotate(90deg);
+    border-color: black;
+    border-style: solid;
+    border-radius: 100%;
+    animation: moving-leg1 3s linear infinite alternate;
+    z-index: -1;
+}
+.leg11 {
+    height: 1px;
+    width: 50px;
+    top: 345px;
+    left: 130px;
+    background-color: black;
+    transform: rotate(90deg);
+    border-color: black;
+    border-style: solid;
+    border-radius: 100%;
+    z-index: -1;
+    animation: moving-leg11 3s linear infinite alternate;
+}
+.leg2 {
+    height: 1px;
+    width: 50px;
+    top: 345px;
+    left: 195px;
+    background-color: black;
+    transform: rotate(90deg);
+    border-color: black;
+    border-style: solid;
+    border-radius: 100%;
+    z-index: -1;
+    animation: moving-leg2 3s linear infinite alternate;
+}
+.leg22 {
+    height: 1px;
+    width: 50px;
+    top: 345px;
+    left: 250px;
+    background-color: black;
+    transform: rotate(90deg);
+    border-color: black;
+    border-style: solid;
+    border-radius: 100%;
+    z-index: -1;
+    animation: moving-leg22 3s linear infinite alternate;
+}
+.leg3 {
+    height: 1px;
+    width: 50px;
+    top: 345px;
+    left: 300px;
+    background-color: black;
+    transform: rotate(90deg);
+    border-color: black;
+    border-style: solid;
+    border-radius: 100%;
+    z-index: -1;
+    animation: moving-leg3 3s linear infinite alternate;
+}
+.leg33 {
+    height: 1px;
+    width: 50px;
+    top: 345px;
+    left: 350px;
+    background-color: black;
+    transform: rotate(90deg);
+    border-color: black;
+    border-style: solid;
+    border-radius: 100%;
+    z-index: -1;
+    animation: moving-leg33 3s linear infinite alternate;
+}
+.leg4 {
+    height: 1px;
+    width: 50px;
+    top: 345px;
+    left: 400px;
+    background-color: black;
+    transform: rotate(90deg);
+    border-color: black;
+    border-style: solid;
+    border-radius: 100%;
+    z-index: -1;
+    animation: moving-leg4 3s linear infinite alternate;
+}
+.leg44 {
+    height: 1px;
+    width: 50px;
+    top: 345px;
+    left: 450px;
+    background-color: black;
+    transform: rotate(90deg);
+    border-color: black;
+    border-style: solid;
+    border-radius: 100%;
+    z-index: -1;
+    animation: moving-leg44 3s linear infinite alternate;
+}
+.mouth {
+    background-color: transparent;
+    left: 435px;
+    top: 255px;
+    width: 50px;
+    height: 50px;
+    border: black solid;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-radius: 100px;
+    animation: moving-mouth 3s linear infinite alternate;
+}
+.input {
+    background-color: black;
+    width: 10px;
+    height: 10px;
+    left: 410px;
+    top: 220px;
+    border: black solid;
+    border-radius: 50%;
+    animation: moving-input 3s linear infinite alternate;
+}
+.input2 {
+    background-color: black;
+    width: 10px;
+    height: 10px;
+    top: 220px;
+    left: 500px;
+    border: black solid;
+    border-radius: 50%;
+    animation: moving-input2 3s linear infinite alternate;
+}
+@keyframes moving-ball4 {
+    to {
+        left: 1400px;
+    }
+}
+@keyframes moving-ball3 {
+    to {
+        left: 1300px;
+    }
+}
+@keyframes moving-ball2 {
+    to {
+        left: 1200px;
+    }
+}
+@keyframes moving-ball {
+    to {
+        left: 1100px;
+    }
+}
+@keyframes moving-eye1 {
+    to {
+        left: 1430px;
+    }
+}
+@keyframes moving-eye2 {
+    to {
+        left: 1520px;
+    }
+}
+@keyframes moving-leg1 {
+    to {
+        left: 1100px;
+    }
+}
+@keyframes moving-leg11 {
+    to {
+        left: 1170px;
+    }
+}
+@keyframes moving-leg2 {
+    to {
+        left: 1240px;
+    }
+}
+@keyframes moving-leg22 {
+    to {
+        left: 1300px;
+    }
+}
+@keyframes moving-leg3 {
+    to {
+        left: 1350px;
+    }
+}
+@keyframes moving-leg33 {
+    to {
+        left: 1400px;
+    }
+}
+@keyframes moving-leg4 {
+    to {
+        left: 1440px;
+    }
+}
+@keyframes moving-leg44 {
+    to {
+        left: 1490px;
+    }
+}
+@keyframes moving-mouth {
+    to {
+        left: 1475px;
+    }
+}
+@keyframes moving-input {
+    to {
+        left: 1450px;
+    }
+}
+@keyframes moving-input2 {
+    to {
+        left: 1540px;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="ball"></div>
+    <div class="ball2"></div>
+    <div class="ball3"></div>
+    <div class="ball4"></div>
+    <div class="eye1"></div>
+    <div class="eye2"></div>
+    <div class="leg1"></div>
+    <div class="leg11"></div>
+    <div class="leg2"></div>
+    <div class="leg22"></div>
+    <div class="leg3"></div>
+    <div class="leg33"></div>
+    <div class="leg4"></div>
+    <div class="leg44"></div>
+    <div class="mouth"></div>
+    <div class="input"></div>
+    <div class="input2"></div>
+</body>
+</html>
